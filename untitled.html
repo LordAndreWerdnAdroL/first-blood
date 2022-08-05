@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>Test — сайт находится в разработке</title>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+	<style>
+	html, body {
+		height: 100%;
+		font-family: Roboto;
+		background: ghostwhite;
+	}
+	h1 {
+		color: skyblue;
+		text-decoration: underline;
+	}
+	h2 {
+		color: green;
+	}
+	h3 {
+		color: #5742f5;
+	}
+	body {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+	</style>
+	<script>
+	// Установка даты, до которой мы ведем обратный отсчет
+	var countDownDate = new Date("September 1, 2022 15:00:00").getTime();
+
+	// Обновление обратного отсчета каждую 1 секунду
+	var x = setInterval(function() {
+
+	  // Получаем сегодняшнюю дату и время
+	  var now = new Date().getTime();
+
+	  // Находим расстояние между настоящим моментом и датой обратного отсчета
+	  var distance = countDownDate - now;
+
+	  // Расчет времени в днях, часах, минутах и секундах
+	  var days = Math.floor(distance / (1000 * 60 * 60 * 60));
+	  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+	  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+	  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+	  // Отобразить результат в элементе с id="demo"
+	  document.getElementById("countdown").innerHTML = days + " дн. " +
+		hours + " ч " +
+		minutes + " мин " +
+		seconds + " с";
+
+	  // Если обратный отсчет завершен, напишите какой-нибудь текст
+	  if (distance < 0) {
+	    clearInterval(x);
+	    document.getElementById("countdown").innerHTML = "ПРЯМО СЕЙЧАС";
+	  }
+	}, 1000);
+	</script>
+</head>
+<body>
+	<h1>Skillbox</h1>
+	<h2>Моё обучение начнётся через: <span id="countdown"></span></h2>
+	<h3>Вы можете связаться с нами:</h3>
+	<h4>Адрес электронной почты (email): hello@test.ru</h4>
+	<h5>Телефон: +7 495 154-09-36</h5>	
+	<div>Ссылка на канал в YouTube: <a href="https://www.youtube.com/channel/UCHJZFCpwlXV7Sie1dV6pQLw" target="_blank">skillbox_youtube</a></div>
+	<div>Instagram: <a href="https://www.instagram.com/test.ru" target="_blank">@skillbox.ru</a></div>
+</body>
+</html>
